@@ -8,23 +8,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
-public class homeController {
+public class memberRegisterContoller {
 
-
-     @FXML
+    
+    @FXML
     private AnchorPane root;
 
     @FXML
-    void btnaddBookOnAction(ActionEvent event) throws IOException {
-        
+    void btnAddBookOnAction(ActionEvent event) throws IOException {
             this.root.getChildren().clear();
             Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRegister.fxml"));
             this.root.getChildren().add(nood);
-
-
-            
-
-
 
     }
 
@@ -33,16 +27,14 @@ public class homeController {
         this.root.getChildren().clear();
         Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/homeView.fxml"));
         this.root.getChildren().add(nood);
-
     }
 
     @FXML
-    void btnMemberRegisterOnAction(ActionEvent event) throws IOException {
+    void btnMemberRegiOnAction(ActionEvent event) throws IOException {
         this.root.getChildren().clear();
         Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/memberRegister.fxml"));
         this.root.getChildren().add(nood);
 
     }
-
     
 }

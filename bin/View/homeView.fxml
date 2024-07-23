@@ -18,7 +18,7 @@
          <children>
             <Pane prefHeight="669.0" prefWidth="262.0" style="-fx-background-color: #636e72; -fx-background-radius: 20px;">
                <children>
-                  <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="90.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="HOME" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="90.0" onAction="#btnHomeOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="HOME" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
