@@ -181,20 +181,20 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="278.0" prefHeight="39.0" prefWidth="122.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="UPDATE">
+            <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="278.0" onAction="#btnUpdateOnAction" prefHeight="39.0" prefWidth="122.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="UPDATE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
             <Pane layoutX="168.0" layoutY="341.0" prefHeight="297.0" prefWidth="681.0" style="-fx-background-radius: 40px; -fx-background-color: #f5f6fa;">
                <children>
-                  <TableView layoutX="24.0" layoutY="12.0" prefHeight="273.0" prefWidth="633.0" style="-fx-background-color: #f5f6fa;">
+                  <TableView fx:id="tblbookRegister" layoutX="24.0" layoutY="12.0" onMouseClicked="#ViewOnMouseClicked" prefHeight="273.0" prefWidth="650.0" style="-fx-background-color: #f5f6fa;">
                     <columns>
-                      <TableColumn prefWidth="105.60000610351562" text="Book Titale" />
-                      <TableColumn prefWidth="131.20001220703125" text="Book Author" />
-                        <TableColumn prefWidth="131.20001220703125" text="Book Categories" />
-                        <TableColumn prefWidth="131.20001220703125" text="Book Available" />
-                        <TableColumn prefWidth="131.20001220703125" text="Book Add Date" />
+                      <TableColumn fx:id="tblBookID" prefWidth="131.19993591308594" text="Book ID" />
+                      <TableColumn fx:id="tblAuthor" prefWidth="140.79998779296875" text="Book Author" />
+                        <TableColumn fx:id="tblCategories" prefWidth="99.20001220703125" text="Book Categories" />
+                        <TableColumn fx:id="tblavilable" prefWidth="131.20001220703125" text="Book Quantity" />
+                        <TableColumn fx:id="tblBookAddDate" prefWidth="131.20001220703125" text="Book Add Date" />
                     </columns>
                   </TableView>
                </children>

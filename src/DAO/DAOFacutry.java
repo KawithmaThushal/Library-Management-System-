@@ -1,6 +1,7 @@
 package DAO;
 
 import DAO.Custom.Impl.bookimpl;
+import DAO.Custom.Impl.memberimpl;
 
 public class DAOFacutry {
     private   static DAOFacutry daoFacutry;
@@ -17,6 +18,10 @@ public class DAOFacutry {
             case Book:
                 
                 return new bookimpl();
+                
+            case MEMBER:
+            return new memberimpl();
+
         
             default:
                 return null;
@@ -24,7 +29,8 @@ public class DAOFacutry {
     }
 
     public enum DAOType{
-        Book
+        Book,
+        MEMBER
     }
     
 }

@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import DAO.SuperDAO;
 import Entity.bookentity;
+import Entity.memberEntity;
 
-public interface bookCustomdao extends SuperDAO{
+public interface membercustomDao extends SuperDAO{
 
-    String save(bookentity dto) throws Exception;
-    String Update(bookentity udtos) throws Exception;
+     String save(memberEntity dto) throws Exception;
+    String Update(memberEntity Mdtos) throws Exception;
     String Delete(String id) throws Exception;
     ArrayList<bookentity> getAll() throws  Exception;
     

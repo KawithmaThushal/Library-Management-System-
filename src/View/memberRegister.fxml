@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -112,37 +111,27 @@
                   <Font name="Arial Rounded MT Bold" size="19.0" />
                </font>
             </Label>
-            <TextField layoutX="116.0" layoutY="80.0" prefHeight="30.0" prefWidth="328.0" promptText="  Name......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="15.0" />
-               </font>
-            </TextField>
-            <Label layoutX="114.0" layoutY="47.0" prefHeight="22.0" prefWidth="135.0" text="Member Name:">
+            <Label layoutX="118.0" layoutY="125.0" prefHeight="22.0" prefWidth="151.0" text="Member Adress:">
                <font>
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="574.0" layoutY="49.0" prefHeight="22.0" prefWidth="151.0" text="Member Adress:">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <TextField layoutX="574.0" layoutY="82.0" prefHeight="30.0" prefWidth="328.0" promptText="  Adress......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+            <TextField fx:id="TextAdress" layoutX="118.0" layoutY="158.0" prefHeight="30.0" prefWidth="403.0" promptText="  Adress......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
                <font>
                   <Font name="Arial Rounded MT Bold" size="15.0" />
                </font>
             </TextField>
-            <TextField layoutX="118.0" layoutY="154.0" prefHeight="30.0" prefWidth="328.0" promptText="  Contac No......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+            <TextField fx:id="TextContact" layoutX="578.0" layoutY="224.0" prefHeight="30.0" prefWidth="328.0" promptText="  Contac No......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
                <font>
                   <Font name="Arial Rounded MT Bold" size="15.0" />
                </font>
             </TextField>
-            <Label layoutX="115.0" layoutY="123.0" prefHeight="22.0" prefWidth="170.0" text="Member Contac No:">
+            <Label layoutX="575.0" layoutY="193.0" prefHeight="22.0" prefWidth="170.0" text="Member Contac No:">
                <font>
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Label>
-            <TextField layoutX="576.0" layoutY="156.0" prefHeight="30.0" prefWidth="328.0" promptText="  NIC......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+            <TextField fx:id="TextNic" layoutX="576.0" layoutY="156.0" prefHeight="30.0" prefWidth="328.0" promptText="  NIC......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
                <font>
                   <Font name="Arial Rounded MT Bold" size="15.0" />
                </font>
@@ -157,14 +146,12 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Label>
-            <DatePicker layoutX="117.0" layoutY="223.0" prefHeight="30.0" prefWidth="328.0" promptText="  Birth Day..." style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 10px; -fx-border-radius: 8px;" />
-            <Label layoutX="575.0" layoutY="193.0" prefHeight="22.0" prefWidth="163.0" text="Member Ship Date:">
+            <Label layoutX="116.0" layoutY="52.0" prefHeight="22.0" prefWidth="163.0" text="Member ID:">
                <font>
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Label>
-            <DatePicker layoutX="576.0" layoutY="223.0" prefHeight="30.0" prefWidth="328.0" promptText="  Member Ship Date...." style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 10px; -fx-border-radius: 8px;" />
-            <TextField layoutX="120.0" layoutY="297.0" prefHeight="30.0" prefWidth="328.0" promptText="  Email......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+            <TextField fx:id="TextEmail" layoutX="120.0" layoutY="297.0" prefHeight="30.0" prefWidth="328.0" promptText="  Email......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
                <font>
                   <Font name="Arial Rounded MT Bold" size="15.0" />
                </font>
@@ -174,34 +161,54 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="526.0" layoutY="278.0" prefHeight="39.0" prefWidth="108.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="SAVE">
+            <JFXButton buttonType="RAISED" layoutX="526.0" layoutY="278.0" onAction="#saveOnAction" prefHeight="39.0" prefWidth="108.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="SAVE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="651.0" layoutY="278.0" prefHeight="39.0" prefWidth="108.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="DELETE">
+            <JFXButton buttonType="RAISED" layoutX="651.0" layoutY="278.0" onAction="#DeleteOnAction" prefHeight="39.0" prefWidth="108.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="DELETE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="278.0" prefHeight="39.0" prefWidth="122.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="UPDATE">
+            <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="278.0" onAction="#UpdateOnActtion" prefHeight="39.0" prefWidth="122.0" style="-fx-background-radius: 20px; -fx-background-color: #ced6e0; -fx-border-radius: 20px;" text="UPDATE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
             <Pane layoutX="168.0" layoutY="341.0" prefHeight="297.0" prefWidth="681.0" style="-fx-background-radius: 40px; -fx-background-color: #f5f6fa;">
                <children>
-                  <TableView layoutX="24.0" layoutY="12.0" prefHeight="273.0" prefWidth="633.0" style="-fx-background-color: #f5f6fa;">
+                  <TableView fx:id="TblMemberRegister" layoutX="24.0" layoutY="12.0" onMouseClicked="#viewMemberOnclick" prefHeight="273.0" prefWidth="633.0" style="-fx-background-color: #f5f6fa;">
                      <columns>
-                        <TableColumn prefWidth="105.60000610351562" text="Member Name" />
-                        <TableColumn prefWidth="131.20001220703125" text="Member Adress" />
-                        <TableColumn prefWidth="131.20001220703125" text="NIC" />
-                        <TableColumn prefWidth="131.20001220703125" text="Contac No" />
-                        <TableColumn prefWidth="131.20001220703125" text="DOB" />
+                        <TableColumn fx:id="tblmembername" prefWidth="105.60000610351562" text="Member Name" />
+                        <TableColumn fx:id="tblAdress" prefWidth="131.20001220703125" text="Member Adress" />
+                        <TableColumn fx:id="tblNic" prefWidth="131.20001220703125" text="NIC" />
+                        <TableColumn fx:id="tblcontactno" prefWidth="131.20001220703125" text="Contac No" />
+                        <TableColumn fx:id="tblDob" prefWidth="131.20001220703125" text="DOB" />
                      </columns>
                   </TableView>
                </children>
             </Pane>
+            <TextField fx:id="TextDob" layoutX="121.0" layoutY="223.0" prefHeight="30.0" prefWidth="328.0" promptText="  DOB......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TextID" layoutX="115.0" layoutY="82.0" prefHeight="30.0" prefWidth="328.0" promptText="  Member ID......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TextName" layoutX="576.0" layoutY="84.0" prefHeight="30.0" prefWidth="328.0" promptText="  Name......" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-color: #000000; -fx-border-radius: 10px;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="574.0" layoutY="51.0" prefHeight="22.0" prefWidth="135.0" text="Member Name:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

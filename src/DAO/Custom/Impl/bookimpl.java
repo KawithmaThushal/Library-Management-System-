@@ -1,5 +1,8 @@
 package DAO.Custom.Impl;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
 import DAO.CrudUtil;
 import DAO.Custom.bookCustomdao;
 import Entity.bookentity;
@@ -13,4 +16,31 @@ public class bookimpl implements bookCustomdao {
         return isssaved ? "sucess" : "Fail";
     }
 
-}
+    @Override
+    public ArrayList<bookentity> getAll() throws Exception {
+      ResultSet rst = CrudUtil.executeQuery( "SELECT * FROM books");
+        
+      ArrayList<bookentity> bookEntitys= new ArrayList<>();
+      
+      while(rst.next()) {
+        bookentity entity = new bookentity(rst.getString("ID"),rst.getString("Author"),rst.getString("Categories"),rst.getString("Title"),rst.getString("PublishDate"),rst.getString("BookAddDate"),rst.getInt("QTY"));
+        bookEntitys.add(entity);
+     }
+      return bookEntitys;
+ }
+
+    @Override
+    public String Delete(String id) throws Exception {
+     boolean issaved = CrudUtil.executeUpdate("DELETE FROM books WHERE ID=?",id);
+
+     return issaved ? "sucess":"Fail";
+    }
+
+    @Override
+    public String Update(bookentity udtos) throws Exception {
+        boolean isupdate = CrudUtil.executeUpdate("UPDATE books SET Author=?,Categories=?,Title=?,PublishDate=?,BookAddDate=?,QTY=? WHERE ID=? ",udtos.getAuthor(),udtos.getCategories(),udtos.getTitale(),udtos.getPublishDate(),udtos.getBookAddDate(),udtos.getQTY(),udtos.getID());
+        return isupdate ? "sucess" : "Fail";
+    }
+    }
+  
+

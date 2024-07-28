@@ -1,6 +1,7 @@
 package Service;
 
 import Service.Custom.Impl.bookImpl;
+import Service.Custom.Impl.memberimpl;
 
 public class subFacutory {
     private static subFacutory factory;
@@ -21,12 +22,16 @@ public class subFacutory {
         switch (type) {
             case BOOK:
                 return  new bookImpl();
+
+            case MEMBER:
+            return   new memberimpl();
             
             default:
                  return null;
         }
     }
     public enum  serviceType{
-        BOOK
+        BOOK,
+        MEMBER
     }
 }
