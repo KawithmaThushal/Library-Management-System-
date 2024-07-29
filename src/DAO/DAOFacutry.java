@@ -1,6 +1,7 @@
 package DAO;
 
 import DAO.Custom.Impl.bookimpl;
+import DAO.Custom.Impl.bookreleseimpl;
 import DAO.Custom.Impl.memberimpl;
 
 public class DAOFacutry {
@@ -22,6 +23,10 @@ public class DAOFacutry {
             case MEMBER:
             return new memberimpl();
 
+            case RELEASE:
+            return new bookreleseimpl();
+
+
         
             default:
                 return null;
@@ -30,7 +35,8 @@ public class DAOFacutry {
 
     public enum DAOType{
         Book,
-        MEMBER
+        MEMBER,
+        RELEASE
     }
     
 }

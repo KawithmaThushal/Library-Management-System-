@@ -41,6 +41,19 @@ public class bookimpl implements bookCustomdao {
         boolean isupdate = CrudUtil.executeUpdate("UPDATE books SET Author=?,Categories=?,Title=?,PublishDate=?,BookAddDate=?,QTY=? WHERE ID=? ",udtos.getAuthor(),udtos.getCategories(),udtos.getTitale(),udtos.getPublishDate(),udtos.getBookAddDate(),udtos.getQTY(),udtos.getID());
         return isupdate ? "sucess" : "Fail";
     }
+
+    @Override
+    public bookentity getBookEntity(String ID) throws Exception {
+      ResultSet rst = CrudUtil.executeQuery("SELECT * FROM books WHERE ID=?",ID);
+     
+        while (rst.next()) {
+          bookentity entity = new bookentity(rst.getString("ID"),rst.getString("Author"),rst.getString("Categories"),rst.getString("Title"),rst.getString("PublishDate"),rst.getString("BookAddDate"),rst.getInt("QTY"));
+            return entity;
+        }
+        return null;
+    }
+
+  
     }
   
 

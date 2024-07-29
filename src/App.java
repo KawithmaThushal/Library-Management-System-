@@ -19,5 +19,7 @@ public class App extends Application{
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         primaryStage.setTitle("JAVA FX");
+
+        
     }
 }

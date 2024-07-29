@@ -9,7 +9,7 @@ public class memberEntity {
     private String  DOB;
     private int Contac_No;
     private String  Email;
-    //private String  MembershipDate;
+    private String  MembershipDate;
     public String getM_ID() {
         return M_ID;
     }
@@ -52,9 +52,8 @@ public class memberEntity {
     public void setEmail(String email) {
         Email = email;
     }
-
-    public memberEntity(String m_ID, String name, String adress, String nic, String dOB, int contac_No, String email
-          ) {
+    public memberEntity(String m_ID, String name, String adress, String nic, String dOB, int contac_No, String email,
+            String membershipDate) {
         M_ID = m_ID;
         Name = name;
         Adress = adress;
@@ -62,15 +61,24 @@ public class memberEntity {
         DOB = dOB;
         Contac_No = contac_No;
         Email = email;
-      
-    }
-    public memberEntity() {
+        MembershipDate = membershipDate;
     }
     @Override
     public String toString() {
         return "memberEntity [M_ID=" + M_ID + ", Name=" + Name + ", Adress=" + Adress + ", Nic=" + Nic + ", DOB=" + DOB
-                + ", Contac_No=" + Contac_No + ", Email=" + Email + "]";
+                + ", Contac_No=" + Contac_No + ", Email=" + Email + ", MembershipDate=" + MembershipDate + "]";
     }
+    public memberEntity() {
+    }
+    public String getMembershipDate() {
+        return MembershipDate;
+    }
+    public void setMembershipDate(String membershipDate) {
+        MembershipDate = membershipDate;
+    }
+    
+
+ 
 
     
     

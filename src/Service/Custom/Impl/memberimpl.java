@@ -1,5 +1,7 @@
 package Service.Custom.Impl;
 
+import java.util.ArrayList;
+
 import DAO.DAOFacutry;
 import DAO.Custom.membercustomDao;
 import Dto.memberDto;
@@ -18,7 +20,11 @@ public class memberimpl implements membercustom{
         dto.getNic(),
         dto.getDOB(),
         dto.getContac_No(),
-        dto.getEmail()
+        dto.getEmail(),
+        dto.getMembershipDate()
+        
+        
+        
        );
 
         return member.save(entity);
@@ -32,7 +38,8 @@ public class memberimpl implements membercustom{
         Mdtos.getNic(),
         Mdtos.getDOB(),
         Mdtos.getContac_No(),
-        Mdtos.getEmail()
+        Mdtos.getEmail(),
+        Mdtos.getMembershipDate()
        );
        return member.Update(entity);
 
@@ -40,7 +47,34 @@ public class memberimpl implements membercustom{
 
     @Override
     public String Delete(String id) throws Exception {
-        return null;
+        return member.Delete(id);
+    }
+
+    @Override
+    public ArrayList<memberDto> getAll() throws Exception {
+
+         ArrayList<memberEntity>  entitys = member.getAll();
+            ArrayList<memberDto> dtos = new ArrayList<>();
+            
+            for(memberEntity dto:entitys){
+                memberDto dtom = new memberDto(dto.getM_ID(),dto.getName(),dto.getAdress(),dto.getNic(),dto.getDOB(),dto.getContac_No(),dto.getEmail(),dto.getMembershipDate());
+                
+                
+                dtos.add(dtom);
+            }
+            return dtos; 
+       
+    }
+
+    @Override
+    public memberDto getAllDto(String m_id) throws Exception {
+        memberEntity dto = member.getMemberEntity(m_id);
+       
+        if(dto != null){
+            memberDto dtos = new memberDto(dto.getM_ID(),dto.getName(),dto.getAdress(),dto.getNic(),dto.getDOB(),dto.getContac_No(),dto.getEmail(),dto.getMembershipDate());
+            return dtos;
+        }
+        return null;  
     }
 
     

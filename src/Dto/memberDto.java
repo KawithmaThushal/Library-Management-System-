@@ -9,7 +9,7 @@ public class memberDto {
     private String  DOB;
     private int Contac_No;
     private String  Email;
-   // private String  MembershipDate;
+   private String  MembershipDate;
     public String getM_ID() {
         return M_ID;
     }
@@ -52,9 +52,16 @@ public class memberDto {
     public void setEmail(String email) {
         Email = email;
     }
- 
-    public memberDto(String m_ID, String name, String adress, String nic, String dOB, int contac_No, String email
-         ) {
+    public String getMembershipDate() {
+        return MembershipDate;
+    }
+    public void setMembershipDate(String membershipDate) {
+        MembershipDate = membershipDate;
+    }
+    public memberDto() {
+    }
+    public memberDto(String m_ID, String name, String adress, String nic, String dOB, int contac_No, String email,
+            String membershipDate) {
         M_ID = m_ID;
         Name = name;
         Adress = adress;
@@ -62,16 +69,24 @@ public class memberDto {
         DOB = dOB;
         Contac_No = contac_No;
         Email = email;
-      
-    }
-    public memberDto() {
+        MembershipDate = membershipDate;
     }
     @Override
     public String toString() {
         return "memberDto [M_ID=" + M_ID + ", Name=" + Name + ", Adress=" + Adress + ", Nic=" + Nic + ", DOB=" + DOB
-                + ", Contac_No=" + Contac_No + ", Email=" + Email + "]";
+                + ", Contac_No=" + Contac_No + ", Email=" + Email + ", MembershipDate=" + MembershipDate + "]";
     }
-
+    public memberDto(String m_ID, String name, String adress, String nic, String dOB, int contac_No, String email) {
+        M_ID = m_ID;
+        Name = name;
+        Adress = adress;
+        Nic = nic;
+        DOB = dOB;
+        Contac_No = contac_No;
+        Email = email;
+    }
+ 
+ 
 
     
 

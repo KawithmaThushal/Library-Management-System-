@@ -10,7 +10,7 @@ public interface bookCustom extends SuperService{
     String Update(bookDto udtos) throws Exception;
 
     String Delete(String id) throws Exception;
-
+    bookDto getAllDto(String itemcode) throws Exception;
     ArrayList<bookDto> getAll() throws  Exception;
     
 }

@@ -54,7 +54,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="326.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK ALLOTED" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="326.0" onAction="#bookReleaseOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK ALLOTED" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
@@ -66,7 +66,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="407.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK RETURN " textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="407.0" onAction="#returnOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK RETURN " textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>

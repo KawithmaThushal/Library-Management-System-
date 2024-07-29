@@ -180,11 +180,11 @@
                <children>
                   <TableView fx:id="TblMemberRegister" layoutX="24.0" layoutY="12.0" onMouseClicked="#viewMemberOnclick" prefHeight="273.0" prefWidth="633.0" style="-fx-background-color: #f5f6fa;">
                      <columns>
-                        <TableColumn fx:id="tblmembername" prefWidth="105.60000610351562" text="Member Name" />
-                        <TableColumn fx:id="tblAdress" prefWidth="131.20001220703125" text="Member Adress" />
-                        <TableColumn fx:id="tblNic" prefWidth="131.20001220703125" text="NIC" />
-                        <TableColumn fx:id="tblcontactno" prefWidth="131.20001220703125" text="Contac No" />
-                        <TableColumn fx:id="tblDob" prefWidth="131.20001220703125" text="DOB" />
+                        <TableColumn fx:id="tblmemberID" prefWidth="105.60000610351562" text="Member ID" />
+                        <TableColumn fx:id="tblNic" prefWidth="108.00003051757812" text="NIC" />
+                        <TableColumn fx:id="tblcontactno" prefWidth="130.4000244140625" text="Contac No" />
+                        <TableColumn fx:id="tblShipDate" prefWidth="148.79998779296875" text="Member Ship Date" />
+                        <TableColumn fx:id="tblmemberName" prefWidth="105.60000610351562" text="Member Name" />
                      </columns>
                   </TableView>
                </children>

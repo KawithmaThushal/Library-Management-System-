@@ -55,6 +55,17 @@ private bookCustomdao custom = (bookCustomdao) DAOFacutry.getInstance().getDao(D
         return custom.Update(entity);
 
     }
+
+    @Override
+    public bookDto getAllDto(String ID) throws Exception {
+        bookentity dto = custom.getBookEntity(ID);
+       
+        if(dto != null){
+            bookDto dtos = new bookDto(dto.getID(),dto.getAuthor(),dto.getCategories(),dto.getTitale(),dto.getPublishDate(),dto.getBookAddDate(),dto.getQTY());
+            return dtos;
+        }
+        return null;  
+    }
       
     }
 
