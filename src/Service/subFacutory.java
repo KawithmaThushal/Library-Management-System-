@@ -1,6 +1,7 @@
 package Service;
 
 import Service.Custom.Impl.bookImpl;
+import Service.Custom.Impl.bookreturncustmimpl;
 import Service.Custom.Impl.memberimpl;
 import Service.Custom.Impl.releasebookimpl;
 
@@ -28,6 +29,8 @@ public class subFacutory {
             return   new memberimpl();
             case RELEASE:
             return   new releasebookimpl();
+            case RETURN:
+            return new bookreturncustmimpl();
             default:
                  return null;
         }
@@ -35,7 +38,8 @@ public class subFacutory {
     public enum  serviceType{
         BOOK,
         MEMBER,
-        RELEASE
+        RELEASE,
+        RETURN
        
     }
 }
