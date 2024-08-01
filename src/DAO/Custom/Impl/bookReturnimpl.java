@@ -21,5 +21,20 @@ public class bookReturnimpl implements bookReturnDao{
      }
       return bookReturnentity;
     }
+
+    @Override
+    public bookReturnEntity getBookreturnEntity(String M_ID, String B_ID) throws Exception {
+
+        ResultSet rst = CrudUtil.executeQuery(" SELECT * FROM borrowbook WHERE M_ID=? AND book_ID=?;",M_ID,B_ID);
+     
+        while (rst.next()) {
+          bookReturnEntity entity = new bookReturnEntity(rst.getString("M_ID"),rst.getString("book_ID"),rst.getString("Release_Date"),rst.getString("Expire_Date"));
+            return entity;
+        }
+        return null;
+
+
+      
+    }
     
 }

@@ -1,6 +1,5 @@
 package Contoller;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -180,7 +179,7 @@ try {
 
 
     @FXML
-    void btnAddBookOnAction(ActionEvent event) throws IOException {
+    void btnAddBookOnAction(ActionEvent event) throws Exception {
             this.root.getChildren().clear();
             Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRegister.fxml"));
             this.root.getChildren().add(nood);
@@ -188,20 +187,35 @@ try {
     }
 
     @FXML
-    void btnHomeOnAction(ActionEvent event) throws IOException {
+    void btnHomeOnAction(ActionEvent event) throws Exception {
         this.root.getChildren().clear();
         Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/homeView.fxml"));
         this.root.getChildren().add(nood);
     }
 
     @FXML
-    void btnMemberRegiOnAction(ActionEvent event) throws IOException {
+    void btnMemberRegiOnAction(ActionEvent event) throws Exception {
         this.root.getChildren().clear();
         Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/memberRegister.fxml"));
         this.root.getChildren().add(nood);
 
     }
     
+
+    @FXML
+    void bookAllotedOnAction(ActionEvent event) throws Exception {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRelease.fxml"));
+        this.root.getChildren().add(nood);
+    }
+
+    @FXML
+    void bookreturnOnAction(ActionEvent event) throws Exception {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookReturn.fxml"));
+        this.root.getChildren().add(nood);
+    }
+
 
       public void initialize() throws ClassNotFoundException, SQLException {
         try {
@@ -263,5 +277,7 @@ try {
         TextNic.setText("");
 
     }
+
+
 
 }

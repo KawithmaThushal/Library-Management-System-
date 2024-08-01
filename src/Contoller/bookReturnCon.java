@@ -1,5 +1,6 @@
 package Contoller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -11,7 +12,10 @@ import Service.subFacutory;
 import Service.Custom.bookreturnCustom;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -117,5 +121,67 @@ public class bookReturnCon {
 
         }
     }
+
+    @FXML
+    void homeOnAction(ActionEvent event) throws IOException {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/homeView.fxml"));
+        this.root.getChildren().add(nood);
+
+    }
+
+    @FXML
+    void memberOnAction(ActionEvent event) throws IOException {
+     this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/memberRegister.fxml"));
+        this.root.getChildren().add(nood);
+    }
+
+  @FXML
+    void addBookOnAction(ActionEvent event) throws IOException {
+        
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRegister.fxml"));
+        this.root.getChildren().add(nood);
+
+    }
+
+    @FXML
+    void bookAllotedOnAction(ActionEvent event) throws IOException {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRelease.fxml"));
+        this.root.getChildren().add(nood);
+    }
+
+    @FXML
+    void bookReturnOnAction(ActionEvent event) throws IOException {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookReturn.fxml"));
+        this.root.getChildren().add(nood);
+    }
     
+    @FXML
+    void checkOnAction(ActionEvent event) {
+        try {
+            String M_id = TxtMemberID.getText();
+            String B_id = TxtBookID.getText();
+
+    
+            bookReturnDto dto= returnbook.getBookreturnEntity(M_id,B_id);
+
+            if(dto != null){
+                 lblExpireDate.setText(dto.getExpire_Date());
+            }
+            else{
+                lblExpireDate.setText("Expire Date Not Found");            }
+            
+            
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,(e.getMessage())).show();
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

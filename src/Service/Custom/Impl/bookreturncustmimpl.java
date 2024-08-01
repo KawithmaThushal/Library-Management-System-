@@ -25,5 +25,19 @@ public class bookreturncustmimpl implements bookreturnCustom{
             }
             return dtos;   
     }
+
+    @Override
+    public bookReturnDto getBookreturnEntity(String M_ID, String B_ID) throws Exception {
+
+        bookReturnEntity dto = breturn.getBookreturnEntity(M_ID, B_ID);
+       
+        if(dto != null){
+            bookReturnDto dtom = new bookReturnDto(dto.getBook_ID(),dto.getM_ID(),dto.getRelease_Date(),dto.getExpire_Date());
+            return dtom;
+        }
+
+        return null;  
+      
+    }
     
 }

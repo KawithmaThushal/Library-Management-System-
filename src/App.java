@@ -14,7 +14,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL resourse = getClass().getResource("./View/homeView.fxml");
+        URL resourse = getClass().getResource("/View/Login.fxml");
         Parent root = FXMLLoader.load(resourse);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

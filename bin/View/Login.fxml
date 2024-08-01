@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Contoller.loginController">
+   <children>
+      <AnchorPane layoutX="46.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane blendMode="DARKEN" prefHeight="750.0" prefWidth="468.0" style="-fx-background-color: #95afc0;">
+         <children>
+            <ImageView fitHeight="368.0" fitWidth="387.0" layoutX="46.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/lms.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="51.0" layoutY="199.0" prefHeight="31.0" prefWidth="368.0" text="Library Management System ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="540.0" layoutY="144.0" prefHeight="432.0" prefWidth="468.0" style="-fx-background-color: #dff9fb;">
+         <children>
+            <TextField fx:id="TextUserName" layoutX="90.0" layoutY="129.0" prefHeight="30.0" prefWidth="313.0" promptText="   username.." style="-fx-border-color: #000000; -fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-radius: 10px;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="TextPassword" layoutX="90.0" layoutY="195.0" prefHeight="30.0" prefWidth="313.0" promptText="    Passwoard..." style="-fx-border-color: #000000; -fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-border-radius: 10px;">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </PasswordField>
+            <JFXButton buttonType="RAISED" layoutX="87.0" layoutY="277.0" onAction="#loginOnAction" prefHeight="43.0" prefWidth="319.0" style="-fx-background-color: #4834d4; -fx-background-radius: 20px;" text="Login">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="192.0" layoutY="41.0" prefHeight="39.0" prefWidth="137.0" text="Login">
+               <font>
+                  <Font name="Bodoni MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelText" layoutX="100.0" layoutY="243.0" prefHeight="18.0" prefWidth="292.0" textFill="#e11919">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

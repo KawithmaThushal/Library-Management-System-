@@ -3,6 +3,7 @@ package DAO;
 import DAO.Custom.Impl.bookReturnimpl;
 import DAO.Custom.Impl.bookimpl;
 import DAO.Custom.Impl.bookreleseimpl;
+import DAO.Custom.Impl.loginImpl;
 import DAO.Custom.Impl.memberimpl;
 
 public class DAOFacutry {
@@ -30,6 +31,9 @@ public class DAOFacutry {
             case  RETURN :
             return new bookReturnimpl();
 
+            case LOGIN:
+            return new loginImpl();
+
 
         
             default:
@@ -41,7 +45,8 @@ public class DAOFacutry {
         Book,
         MEMBER,
         RELEASE,
-        RETURN
+        RETURN,
+        LOGIN
     }
     
 }

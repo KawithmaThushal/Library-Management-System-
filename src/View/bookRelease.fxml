@@ -66,7 +66,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="407.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK RETURN " textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="407.0" onAction="#bookReturnOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK RETURN " textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
@@ -94,7 +94,7 @@
             </Pane>
          </children>
       </VBox>
-      <ImageView fitHeight="60.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="675.6" AnchorPane.leftAnchor="59.200000000000045" AnchorPane.rightAnchor="1257.0" AnchorPane.topAnchor="14.0">
+      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="675.6" AnchorPane.leftAnchor="59.200000000000045" AnchorPane.rightAnchor="1257.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../images/check-book.png" />
          </image>
@@ -166,5 +166,10 @@
             </JFXButton>
          </children>
       </Pane>
+      <Label layoutX="660.0" layoutY="24.0" prefHeight="39.0" prefWidth="351.0" text="BOOK RELEASE " textFill="#fed330">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

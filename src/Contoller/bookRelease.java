@@ -64,6 +64,12 @@ public class bookRelease {
         Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRelease.fxml"));
         this.root.getChildren().add(nood);
     }
+    @FXML
+    void bookReturnOnAction(ActionEvent event) throws Exception {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookReturn.fxml"));
+        this.root.getChildren().add(nood);
+    }
 
     @FXML
     void btnAddOnAction(ActionEvent event) throws Exception {
