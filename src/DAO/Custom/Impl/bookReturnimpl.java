@@ -11,7 +11,7 @@ public class bookReturnimpl implements bookReturnDao{
 
     @Override
     public ArrayList<bookReturnEntity> getAll() throws Exception {
-    ResultSet rst = CrudUtil.executeQuery( "SELECT * FROM borrowbook  WHERE  Expire_Date='2024-08-12'");
+    ResultSet rst = CrudUtil.executeQuery( "SELECT * FROM borrowbook  WHERE  Expire_Date='2024-08-09'");
         
       ArrayList<bookReturnEntity> bookReturnentity= new ArrayList<>();
       

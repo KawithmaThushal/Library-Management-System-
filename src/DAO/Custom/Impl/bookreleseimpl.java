@@ -18,5 +18,7 @@ public class bookreleseimpl implements releasebookDAO{
         boolean ischeked = CrudUtil.executeUpdate("INSERT INTO borrowbook VALUES(?,?,?,?)",releseEntitiy.getBook_ID(),releseEntitiy.getM_ID(), releseEntitiy.getRelease_Date(),releseEntitiy.getExpire_Date());
         return ischeked ? "sucess" : "Fail";
     }
+
+ 
     
 }

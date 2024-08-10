@@ -76,6 +76,12 @@ public String toString() {
     return "MemberTm [M_ID=" + M_ID + ", Name=" + Name + ", Adress=" + Adress + ", Nic=" + Nic + ", DOB=" + DOB
             + ", Contac_No=" + Contac_No + ", Email=" + Email + ", MembershipDate=" + MembershipDate + "]";
 }
+public MemberTm(String m_ID, String nic, int contac_No, String membershipDate) {
+    M_ID = m_ID;
+    Nic = nic;
+    Contac_No = contac_No;
+    MembershipDate = membershipDate;
+}
     
 
 }

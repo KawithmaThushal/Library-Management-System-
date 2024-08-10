@@ -151,24 +151,20 @@ public class bookRelease {
 try {
     LocalDate currentDate = LocalDate.now();
     LocalDate dateAfterTwoWeeks = currentDate.plusDays(14);
- 
 
-      bookReleaseDto bDto= new bookReleaseDto();
-      bDto.setBook_ID(TxtBookId.getText());
-      bDto.setM_ID(TxtMemberId.getText());
-      bDto.setRelease_Date(currentDate.toString());
-      bDto.setExpire_Date(dateAfterTwoWeeks.toString());
-      bDto.setDtos(bookDtos);
+    bookReleaseDto bDto = new bookReleaseDto();
+    bDto.setBook_ID(TxtBookId.getText());
+    bDto.setM_ID(TxtMemberId.getText());
+    bDto.setRelease_Date(currentDate.toString());
+    bDto.setExpire_Date(dateAfterTwoWeeks.toString());
+    bDto.setDtos(bookDtos);
 
-      String reps = releasebook.release(bDto);
-      JOptionPane.showMessageDialog(null, this, reps, 0);
+    String reps = releasebook.release(bDto);
+    JOptionPane.showMessageDialog(null, reps); // Display the response message
 
 } catch (Exception e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(null, this, e.getMessage(), 0);
-
-       
-
-    }
-    }
+    JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+}
+}
 }

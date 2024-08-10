@@ -25,13 +25,13 @@ import javafx.scene.layout.AnchorPane;
 
 
 
-public class memberRegisterContoller {
+public class memberRegisterContoller {   
 
-    
     @FXML
     private AnchorPane root;  
     @FXML
     private TableView<MemberTm> TblMemberRegister;
+
     @FXML
     private TextField TextAdress;
 
@@ -54,27 +54,20 @@ public class memberRegisterContoller {
     private TextField TextNic;
 
     @FXML
-    private TableColumn<MemberTm, String> tblAdress;
+    private TableColumn<MemberTm, String> tblMemberID;
 
     @FXML
-    private TableColumn<MemberTm, String> tblShipDate;
+    private TableColumn<MemberTm, String> tblNIC;
 
     @FXML
-    private TableColumn<MemberTm, String> tblNic;
+    private TableColumn<MemberTm, Integer> tblcontactNo;
 
     @FXML
-    private TableColumn<MemberTm, Integer> tblcontactno;
-
-    @FXML
-    private TableColumn<MemberTm, String> tblmemberID;
-
-    @FXML
-    private TableColumn<MemberTm, String> tblmemberName;
+    private TableColumn<MemberTm, String> tblship;
 
     private membercustom  Mecustom = (membercustom) subFacutory.getInstance().getservice(subFacutory.serviceType.MEMBER);
 
-
-  
+    
     @FXML
     void DeleteOnAction(ActionEvent event) {
 try {
@@ -95,6 +88,7 @@ try {
 
 }
     }
+
 
     @FXML
     void UpdateOnActtion(ActionEvent event) {
@@ -124,7 +118,6 @@ try {
         }
     }
 
-    
 
     @FXML
     void saveOnAction(ActionEvent event) {
@@ -154,11 +147,11 @@ try {
             }
     }
 
+
     @FXML
     void viewMemberOnclick(MouseEvent event) {
 try {
     MemberTm selecMember = TblMemberRegister.getSelectionModel().getSelectedItem();
-
             if(selecMember != null){
                 TextID.setText(selecMember.getM_ID());
                 TextName.setText(selecMember.getName());
@@ -167,14 +160,9 @@ try {
                 TextNic.setText(selecMember.getNic());
                 TextContact.setText(String.valueOf(selecMember.getContac_No()));
                 TextEmail.setText(selecMember.getEmail());
-
-                
-
             }
-
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,(e.getMessage())).show();
-
         }    }
 
 
@@ -183,8 +171,8 @@ try {
             this.root.getChildren().clear();
             Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRegister.fxml"));
             this.root.getChildren().add(nood);
-
     }
+
 
     @FXML
     void btnHomeOnAction(ActionEvent event) throws Exception {
@@ -192,6 +180,7 @@ try {
         Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/homeView.fxml"));
         this.root.getChildren().add(nood);
     }
+
 
     @FXML
     void btnMemberRegiOnAction(ActionEvent event) throws Exception {
@@ -219,28 +208,27 @@ try {
 
       public void initialize() throws ClassNotFoundException, SQLException {
         try {
-            tblmemberID.setCellValueFactory(new PropertyValueFactory<>("M_ID"));
-            tblNic.setCellValueFactory(new PropertyValueFactory<>("NIC"));
-            tblcontactno.setCellValueFactory(new PropertyValueFactory<>("CONTAC_NUM"));
-            tblShipDate.setCellValueFactory(new PropertyValueFactory<>("MembershipDate"));
-            tblmemberName.setCellValueFactory(new PropertyValueFactory<>("NAME"));
+            //            tblBookID.setCellValueFactory(new PropertyValueFactory<>("ID"));
+
+                tblMemberID.setCellValueFactory(new PropertyValueFactory<>("M_ID"));
+                tblNIC.setCellValueFactory(new PropertyValueFactory<>("Nic"));
+                tblcontactNo.setCellValueFactory(new PropertyValueFactory<>("Contac_No"));
+                tblship.setCellValueFactory(new PropertyValueFactory<>("MembershipDate"));
 
             getAllMember();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error initializing data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Unexpected error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-
       public void getAllMember() throws Exception{
-
         try {
-          
-            ArrayList<memberDto> bookList = Mecustom.getAll();
-
-            
+            ArrayList<memberDto> memberList = Mecustom.getAll(); 
             ObservableList<MemberTm> MemberTMList = FXCollections.observableArrayList();
-            for (memberDto dto : bookList) {
+            for (memberDto dto : memberList) {
                 MemberTMList.add(new MemberTm(
                    dto.getM_ID(),
                    dto.getName(),
@@ -250,21 +238,14 @@ try {
                    dto.getContac_No(),
                    dto.getEmail(),
                    dto.getMembershipDate()
-                   
-                   
+                         
                 ));
             }
-
           
             TblMemberRegister.setItems(MemberTMList);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,(e.getMessage())).show();
-
         }
-
-
-
-
     }
 
     public void clear(){

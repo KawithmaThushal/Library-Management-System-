@@ -26,36 +26,34 @@ public class releasebookimpl implements releasebook{
             String resp = releBook.Save(releseEntitiy);
 
             if(resp.equals("sucess")){
-                boolean isbookrelease =true;
-                for(bookDto bdto:releseDto.getDtos()){
-                    bookentity bokkEntity = custom.getBookEntity(bdto.getID());
-                    System.out.println("Error Console Log");
-                    System.out.println(bokkEntity);
-                    System.out.println(bdto.getQTY());
-                    bokkEntity.setQTY(bdto.getQTY()-1);
-                    String respt = custom.Update(bokkEntity);
+                boolean isupdate =true;
 
-                    if(!(respt.equals("sucess"))){
-                        isbookrelease=false;
+                for(bookDto bto:releseDto.getDtos()){
+                    bookentity bentity= custom.getBookEntity(bto.getID());
+                    bentity.setQTY(bentity.getQTY()-1);
+                    String respt =custom.Update(bentity);
+
+
+                    if(!respt.equals("sucess")){
+                        isupdate=false;
                     }
-                    if(isbookrelease){
+
+                    if(isupdate){
                         connection.commit();
                         return "Sucess";
                     }else{
                         connection.rollback();
-                        return "Error1";
+                        return "Error";
                     }
-
                 }
+               
             }else{
                 connection.rollback();
-              return " Error2";
+                return "Error1";
             }
-
-
-        } catch (Exception e) {
+   } catch (Exception e) {
             connection.rollback();
-             e.printStackTrace();
+            e.printStackTrace();
         }
         finally{
             connection.setAutoCommit(true);

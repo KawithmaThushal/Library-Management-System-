@@ -68,13 +68,14 @@ public class memberimpl implements membercustom{
 
     @Override
     public memberDto getAllDto(String m_id) throws Exception {
-        memberEntity dto = member.getMemberEntity(m_id);
-       
-        if(dto != null){
-            memberDto dtos = new memberDto(dto.getM_ID(),dto.getName(),dto.getAdress(),dto.getNic(),dto.getDOB(),dto.getContac_No(),dto.getEmail(),dto.getMembershipDate());
-            return dtos;
+        memberEntity dtos= member.getMemberEntity(m_id);
+
+        if(dtos != null){
+            memberDto mdto = new memberDto(dtos.getM_ID(),dtos.getName(),dtos.getAdress(),dtos.getNic(),dtos.getDOB(),dtos.getContac_No(),dtos.getEmail(),dtos.getMembershipDate());
+            return mdto;
         }
-        return null;  
+
+        return null;
     }
 
     
