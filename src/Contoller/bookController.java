@@ -211,10 +211,6 @@ public class bookController {
             new Alert(Alert.AlertType.ERROR,(e.getMessage())).show();
 
         }
-
-
-
-
     }
 
     public void initialize() throws ClassNotFoundException, SQLException {

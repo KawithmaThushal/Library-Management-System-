@@ -2,6 +2,7 @@ package Service;
 
 import Service.Custom.Impl.bookImpl;
 import Service.Custom.Impl.bookreturncustmimpl;
+import Service.Custom.Impl.homeServiceImpl;
 import Service.Custom.Impl.loginServiceimpl;
 import Service.Custom.Impl.memberimpl;
 import Service.Custom.Impl.releasebookimpl;
@@ -35,6 +36,9 @@ public class subFacutory {
 
             case LOGIN:
             return new loginServiceimpl();
+
+            case HOME:
+            return new homeServiceImpl();
             default:
                  return null;
         }
@@ -44,7 +48,8 @@ public class subFacutory {
         MEMBER,
         RELEASE,
         RETURN,
-        LOGIN
+        LOGIN,
+        HOME
        
     }
 }

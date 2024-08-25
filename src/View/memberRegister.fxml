@@ -210,5 +210,15 @@
             </Label>
          </children>
       </Pane>
+      <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="193.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="693.6" AnchorPane.leftAnchor="170.39999999999995" AnchorPane.rightAnchor="1183.0" AnchorPane.topAnchor="30.0">
+         <image>
+            <Image url="@../images/main-menu.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="204.0" layoutY="32.0" prefHeight="26.0" prefWidth="284.0" text="HOME / MEMBER REGISTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

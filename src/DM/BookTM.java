@@ -8,6 +8,24 @@ public class BookTM {
     private String Titale;
     private String BookAddDate;
     private String publishDate;
+    private int Qty;
+    public BookTM(String iD, String author, String categories, String titale, String bookAddDate, String publishDate,
+            int qty, int qTY2) {
+        ID = iD;
+        Author = author;
+        Categories = categories;
+        Titale = titale;
+        BookAddDate = bookAddDate;
+        this.publishDate = publishDate;
+        Qty = qty;
+        QTY = qTY2;
+    }
+    public int getQty() {
+        return Qty;
+    }
+    public void setQty(int qty) {
+        Qty = qty;
+    }
     public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
     }
@@ -70,6 +88,8 @@ public class BookTM {
         this.publishDate = publishDate;
         QTY = qTY;
     }
+
+    
    
     
 
