@@ -3,7 +3,8 @@ package Entity;
 public class bookentity {
     private String ID;
     private String Author;
-    private String Categories;
+    private int CategoryID;
+   
     private String Titale;
     private String publishDate;
     private String BookAddDate;
@@ -20,11 +21,11 @@ public class bookentity {
     public void setAuthor(String author) {
         Author = author;
     }
-    public String getCategories() {
-        return Categories;
+    public int getCategoryID() {
+        return CategoryID;
     }
-    public void setCategories(String categories) {
-        Categories = categories;
+    public void setCategoryID(int categoryID) {
+        CategoryID = categoryID;
     }
     public String getTitale() {
         return Titale;
@@ -55,21 +56,30 @@ public class bookentity {
     public bookentity() {
     }
     
-    public bookentity(String iD, String author, String categories, String titale, String publishDate,
-            String bookAddDate, int qTY) {
+
+    public bookentity(String iD, String author, int categoryID, String titale, String publishDate, String bookAddDate,
+            int qTY) {
         ID = iD;
         Author = author;
-        Categories = categories;
+        CategoryID = categoryID;
         Titale = titale;
         this.publishDate = publishDate;
         BookAddDate = bookAddDate;
         QTY = qTY;
     }
+
+    
     @Override
     public String toString() {
-        return "bookentity [ID=" + ID + ", Author=" + Author + ", Categories=" + Categories + ", Titale=" + Titale
+        return "bookentity [ID=" + ID + ", Author=" + Author + ", CategoryID=" + CategoryID + ", Titale=" + Titale
                 + ", publishDate=" + publishDate + ", BookAddDate=" + BookAddDate + ", QTY=" + QTY + "]";
     }
+    public bookentity(String iD, int categoryID, int qTY) {
+        ID = iD;
+        CategoryID = categoryID;
+        QTY = qTY;
+    }
+
 
     
     

@@ -10,8 +10,8 @@ import Entity.bookentity;
 public class bookimpl implements bookCustomdao {
 
     @Override
-    public String save(bookentity dto) throws Exception {
-      boolean isssaved = CrudUtil.executeUpdate("INSERT INTO books VALUES(?,?,?,?,?,?,?)", dto.getID(),dto.getAuthor(),dto.getCategories(),dto.getTitale(),dto.getPublishDate(),dto.getBookAddDate(),dto.getQTY());
+    public String  save(bookentity dto) throws Exception {
+      boolean isssaved= CrudUtil.executeUpdate("INSERT INTO books VALUES(?,?,?,?,?,?,?)", dto.getID(),dto.getAuthor(),dto.getCategoryID(),dto.getTitale(),dto.getPublishDate(),dto.getBookAddDate(),dto.getQTY());
 
         return isssaved ? "sucess" : "Fail";
     }
@@ -23,7 +23,7 @@ public class bookimpl implements bookCustomdao {
       ArrayList<bookentity> bookEntitys= new ArrayList<>();
       
       while(rst.next()) {
-        bookentity entity = new bookentity(rst.getString("ID"),rst.getString("Author"),rst.getString("Categories"),rst.getString("Title"),rst.getString("PublishDate"),rst.getString("BookAddDate"),rst.getInt("QTY"));
+        bookentity entity = new bookentity(rst.getString("ID"),rst.getString("Author"),rst.getInt("CategoryID"),rst.getString("Title"),rst.getString("PublishDate"),rst.getString("BookAddDate"),rst.getInt("QTY"));
         bookEntitys.add(entity);
      }
       return bookEntitys;
@@ -38,7 +38,7 @@ public class bookimpl implements bookCustomdao {
 
     @Override
     public String Update(bookentity udtos) throws Exception {
-        boolean isupdate = CrudUtil.executeUpdate("UPDATE books SET Author=?,Categories=?,Title=?,PublishDate=?,BookAddDate=?,QTY=? WHERE ID=? ",udtos.getAuthor(),udtos.getCategories(),udtos.getTitale(),udtos.getPublishDate(),udtos.getBookAddDate(),udtos.getQTY(),udtos.getID());
+        boolean isupdate = CrudUtil.executeUpdate("UPDATE books SET Author=?,CategoryID=?,Title=?,PublishDate=?,BookAddDate=?,QTY=? WHERE ID=? ",udtos.getAuthor(),udtos.getCategoryID(),udtos.getTitale(),udtos.getPublishDate(),udtos.getBookAddDate(),udtos.getQTY(),udtos.getID());
         return isupdate ? "sucess" : "Fail";
     }
 
@@ -47,10 +47,17 @@ public class bookimpl implements bookCustomdao {
       ResultSet rst = CrudUtil.executeQuery("SELECT * FROM books WHERE ID=?",ID);
      
         while (rst.next()) {
-          bookentity entity = new bookentity(rst.getString("ID"),rst.getString("Author"),rst.getString("Categories"),rst.getString("Title"),rst.getString("PublishDate"),rst.getString("BookAddDate"),rst.getInt("QTY"));
+          bookentity entity = new bookentity(rst.getString("ID"),rst.getString("Author"),rst.getInt("CategoryID"),rst.getString("Title"),rst.getString("PublishDate"),rst.getString("BookAddDate"),rst.getInt("QTY"));
             return entity;
         }
         return null;
+    }
+
+    @Override
+    public String TSave(bookentity tdto) throws Exception {
+      boolean isTempeoryssaved = CrudUtil.executeUpdate("INSERT INTO bookquty VALUES(?,?,?)", tdto.getID(),tdto.getCategoryID(),tdto.getQTY());
+
+      return isTempeoryssaved ? "sucess" : "Fail";
     }
 
   

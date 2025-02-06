@@ -9,9 +9,11 @@ import java.util.Locale;
 
 import DM.BookTM;
 import DM.MemberTm;
+import Dto.CategoryDto;
 import Dto.bookDto;
 import Dto.memberDto;
 import Service.subFacutory;
+import Service.Custom.CategoryService;
 import Service.Custom.bookCustom;
 import Service.Custom.homeCustomService;
 import Service.Custom.membercustom;
@@ -106,7 +108,7 @@ public class homeController {
                 tblBookId.setCellValueFactory(new PropertyValueFactory<>("ID"));
                 tblBookAuthor.setCellValueFactory(new PropertyValueFactory<>("Author"));
                 tblBookTitale.setCellValueFactory(new PropertyValueFactory<>("Titale"));
-                tblBookQTY.setCellValueFactory(new PropertyValueFactory<>("QTY"));
+                tblBookQTY.setCellValueFactory(new PropertyValueFactory<>("Qty"));
                
 
                
@@ -121,8 +123,10 @@ public class homeController {
     }    
 
         private homeCustomService  homeService =  (homeCustomService) subFacutory.getInstance().getservice(subFacutory.serviceType.HOME);
-         private membercustom  Mecustom = (membercustom) subFacutory.getInstance().getservice(subFacutory.serviceType.MEMBER);
-             private bookCustom  bcustom = (bookCustom) subFacutory.getInstance().getservice(subFacutory.serviceType.BOOK);
+        private membercustom  Mecustom = (membercustom) subFacutory.getInstance().getservice(subFacutory.serviceType.MEMBER);
+        private bookCustom  bcustom = (bookCustom) subFacutory.getInstance().getservice(subFacutory.serviceType.BOOK);
+            private CategoryService  categoryService = (CategoryService) subFacutory.getInstance().getservice(subFacutory.serviceType.CATEGORY);
+
 
 
 
@@ -163,7 +167,6 @@ public class homeController {
 
     }
 
-
     public void OverdueBook(){
         try {
                 int overbook =homeService.getOverdueBook();
@@ -190,9 +193,14 @@ public class homeController {
 
     @FXML
     void btnAddBook(ActionEvent event) throws IOException {
-        this.root.getChildren().clear();
-        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/bookRegister.fxml"));
-        this.root.getChildren().add(nood);
+        try {
+            this.root.getChildren().clear();
+            Parent nood = FXMLLoader.load(getClass().getResource("/view/bookRegister.fxml"));
+            this.root.getChildren().add(nood);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error loading FXML file: " + e.getMessage());
+        }
 
     }
 
@@ -204,11 +212,12 @@ public class homeController {
 
     }
    
-
-   
-
-        
- 
+    @FXML
+    void btnReportOnAction(ActionEvent event) throws IOException {
+        this.root.getChildren().clear();
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/Report.fxml"));
+        this.root.getChildren().add(nood);
+    }
 
     @FXML
     void btnaddBookOnAction(ActionEvent event) throws Exception {
@@ -286,7 +295,7 @@ public class homeController {
                 bookTMList.add(new BookTM(
                     dto.getID(),
                     dto.getAuthor(),
-                    dto.getCategories(),
+                    getCategoryNameById(dto.getCategoryID()), 
                     dto.getTitale(),
                     dto.getPublishDate(),
                     dto.getBookAddDate(),
@@ -303,5 +312,13 @@ public class homeController {
 
         }
     }
+
+    private String getCategoryNameById(int id) {
+    return categoryService.getAllCategories().stream()
+            .filter(c -> c.getCategoryId() == id)
+            .map(CategoryDto::getCategoryName)
+            .findFirst()
+            .orElse("Unknown");
+}
     
 }

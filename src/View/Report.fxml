@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1380.0" style="-fx-background-color: #4b4b4b;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Contoller.reportController">
+   <children>
+      <Pane layoutX="14.0" layoutY="73.0" prefHeight="669.0" prefWidth="262.0" style="-fx-background-color: #636e72; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="23.199999999999932" AnchorPane.rightAnchor="1094.6" AnchorPane.topAnchor="84.0">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="90.0" onAction="#btnHomeOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/house%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="169.0" onAction="#btnAddOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="ADD BOOK" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="249.0" onAction="#brnAddMemberOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="MEMB REGISTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/register.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="326.0" onAction="#bookAllocatedonAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK ALLOTED" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/note.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="407.0" onAction="#bookReturnOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="BOOK RETURN " textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/return.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="487.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="REPORT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/monitor.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <ImageView fitHeight="58.0" fitWidth="69.0" layoutX="77.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="675.2" AnchorPane.leftAnchor="57.6" AnchorPane.rightAnchor="1264.0" AnchorPane.topAnchor="17.0">
+         <image>
+            <Image url="@../images/report.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="332.0" layoutY="94.0" prefHeight="652.0" prefWidth="1052.0" style="-fx-background-radius: 40px; -fx-background-color: #ffffff;" AnchorPane.bottomAnchor="14.600000000000136" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="14.399999999999977" AnchorPane.topAnchor="84.0">
+         <children>
+            <Pane layoutX="39.0" layoutY="26.0" onMouseClicked="#onCurrentInventory" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Current  Inventory">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Pane layoutX="39.0" layoutY="201.0" onMouseClicked="#onBookAdded" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Book Added">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="39.0" layoutY="382.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Book Removed">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="787.0" layoutY="26.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Payement History">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="287.0" layoutY="26.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Barrowing Activits">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="287.0" layoutY="201.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Overdue Book">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="287.0" layoutY="382.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Return Activity">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="535.0" layoutY="26.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="User Registration">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="535.0" layoutY="201.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="User Browing History">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="535.0" layoutY="382.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Top Barrower">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="787.0" layoutY="201.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Collect Finase">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="787.0" layoutY="382.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Reservation fulfilment">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

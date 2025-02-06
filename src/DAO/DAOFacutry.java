@@ -1,5 +1,6 @@
 package DAO;
 
+import DAO.Custom.Impl.CategoryDAOimpl;
 import DAO.Custom.Impl.bookReturnimpl;
 import DAO.Custom.Impl.bookimpl;
 import DAO.Custom.Impl.bookreleseimpl;
@@ -21,7 +22,7 @@ public class DAOFacutry {
         switch (type) {
             case Book:
                 
-                return new bookimpl();
+            return new bookimpl();
                 
             case MEMBER:
             return new memberimpl();
@@ -38,6 +39,9 @@ public class DAOFacutry {
             case HOME:
             return new homeImpl();
 
+            case CATEGORY:
+            return new CategoryDAOimpl();
+
 
         
             default:
@@ -51,7 +55,8 @@ public class DAOFacutry {
         RELEASE,
         RETURN,
         LOGIN,
-        HOME
+        HOME,
+        CATEGORY
     }
     
 }

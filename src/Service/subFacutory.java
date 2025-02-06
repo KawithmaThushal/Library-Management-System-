@@ -1,5 +1,6 @@
 package Service;
 
+import Service.Custom.Impl.CategoryServiceImpl;
 import Service.Custom.Impl.bookImpl;
 import Service.Custom.Impl.bookreturncustmimpl;
 import Service.Custom.Impl.homeServiceImpl;
@@ -37,6 +38,9 @@ public class subFacutory {
             case LOGIN:
             return new loginServiceimpl();
 
+            case CATEGORY:
+            return new CategoryServiceImpl();
+
             case HOME:
             return new homeServiceImpl();
             default:
@@ -49,7 +53,8 @@ public class subFacutory {
         RELEASE,
         RETURN,
         LOGIN,
-        HOME
+        HOME,
+        CATEGORY
        
     }
 }

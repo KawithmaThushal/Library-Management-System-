@@ -3,7 +3,8 @@ package Dto;
 public class bookDto {
     private String ID;
     private String Author;
-    private String Categories;
+    private int CategoryID;
+    
     private String Titale;
     private String publishDate;
     private String BookAddDate;
@@ -20,12 +21,14 @@ public class bookDto {
     public void setAuthor(String author) {
         Author = author;
     }
-    public String getCategories() {
-        return Categories;
+
+    public int getCategoryID() {
+        return CategoryID;
     }
-    public void setCategories(String categories) {
-        Categories = categories;
+    public void setCategoryID(int categoryID) {
+        CategoryID = categoryID;
     }
+   
     public String getTitale() {
         return Titale;
     }
@@ -52,11 +55,11 @@ public class bookDto {
     }
     public bookDto() {
     }
-    public bookDto(String iD, String author, String categories, String titale, String publishDate, String bookAddDate,
+    public bookDto(String iD, String author, int categoryID, String titale, String publishDate, String bookAddDate,
             int qTY) {
         ID = iD;
         Author = author;
-        Categories = categories;
+        CategoryID = categoryID;
         Titale = titale;
         this.publishDate = publishDate;
         BookAddDate = bookAddDate;
@@ -64,9 +67,15 @@ public class bookDto {
     }
     @Override
     public String toString() {
-        return "bookDto [ID=" + ID + ", Author=" + Author + ", Categories=" + Categories + ", Titale=" + Titale
+        return "bookDto [ID=" + ID + ", Author=" + Author + ", CategoryID=" + CategoryID + ", Titale=" + Titale
                 + ", publishDate=" + publishDate + ", BookAddDate=" + BookAddDate + ", QTY=" + QTY + "]";
     }
+  
+    // public bookDto(String iD, String categories, int qTY) {
+    //     ID = iD;
+    //     Categories = categories;
+    //     QTY = qTY;
+    // }
 
     
 }
