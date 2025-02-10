@@ -103,7 +103,7 @@ public class bookRelease {
         String mtext = TxtMemberId.getText();
         memberDto dto = Mecustom.getAllDto(mtext);
         if(dto != null){
-            lblMemberDetails.setText(dto.getNic()+" "+dto.getName() + " "+dto.getMembershipDate());
+            lblMemberDetails.setText("Name:"+dto.getName()+" "+dto.getMembershipDate());
         }
         else{
             lblMemberDetails.setText("Member id not found");
@@ -116,6 +116,8 @@ public class bookRelease {
         JOptionPane.showMessageDialog(null, this, "Error at Search member ID", 0);
     }
 
+    
+
 
     }
     private bookCustom  bcustom = (bookCustom) subFacutory.getInstance().getservice(subFacutory.serviceType.BOOK);
@@ -127,7 +129,7 @@ public class bookRelease {
             String btext = TxtBookId.getText();
             bookDto dto = bcustom.getAllDto(btext);
             if(dto != null){
-                LabelbookDetails.setText(dto.getTitale()+ " "+dto.getAuthor() + " "+dto.getQTY());
+                LabelbookDetails.setText("Book Name"+dto.getTitale()+ "Quantitiy "+dto.getQTY());
             }
             else{
                 LabelbookDetails.setText("Book id not found");
@@ -160,11 +162,18 @@ try {
     bDto.setDtos(bookDtos);
 
     String reps = releasebook.release(bDto);
-    JOptionPane.showMessageDialog(null, reps); // Display the response message
+    JOptionPane.showMessageDialog(null, reps); 
 
 } catch (Exception e) {
     e.printStackTrace();
     JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 }
+}
+
+@FXML
+void btnReportOnAction(ActionEvent event)throws Exception {
+    this.root.getChildren().clear();
+    Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/subReport/Report.fxml"));
+    this.root.getChildren().add(nood);
 }
 }

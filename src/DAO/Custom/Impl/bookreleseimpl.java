@@ -19,6 +19,12 @@ public class bookreleseimpl implements releasebookDAO{
         return ischeked ? "sucess" : "Fail";
     }
 
+    @Override
+    public String Delete(String M_id, String B_ID) throws Exception {
+      boolean isupdated = CrudUtil.executeUpdate("DELETE FROM borrowbook WHERE M_ID = ? AND book_ID = ?",M_id,B_ID);
+      return isupdated ? "sucess":"Fail";
+    }
+
  
     
 }

@@ -215,7 +215,7 @@ public class homeController {
     @FXML
     void btnReportOnAction(ActionEvent event) throws IOException {
         this.root.getChildren().clear();
-        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/Report.fxml"));
+        Parent nood =  FXMLLoader.load(this.getClass().getResource("/view/subReport/Report.fxml"));
         this.root.getChildren().add(nood);
     }
 

@@ -66,6 +66,11 @@ public class releasebookimpl implements releasebook{
        
     }
 
+    @Override
+    public String Delete(String M_id, String B_ID) throws Exception {
+       return releBook.Delete(M_id, B_ID);
+    }
+
 
     
 }

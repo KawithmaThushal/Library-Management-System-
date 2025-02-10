@@ -78,7 +78,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="487.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="REPORT" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="487.0" onAction="#btnReportOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="REPORT" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>

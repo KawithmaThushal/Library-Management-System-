@@ -95,7 +95,7 @@
          <children>
             <Pane layoutX="39.0" layoutY="26.0" onMouseClicked="#onCurrentInventory" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
                <children>
-                  <Label layoutX="14.0" layoutY="22.0" text="Current  Inventory">
+                  <Label layoutX="14.0" layoutY="22.0" text="Book  Inventory">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="19.0" />
                      </font>
@@ -190,20 +190,6 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="535.0" layoutY="26.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
-               <children>
-                  <Label layoutX="14.0" layoutY="22.0" text="User Registration">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="44.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
             <Pane layoutX="535.0" layoutY="201.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
                <children>
                   <Label layoutX="14.0" layoutY="22.0" text="User Browing History">
@@ -232,9 +218,9 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="787.0" layoutY="201.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+            <Pane layoutX="535.0" layoutY="26.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
                <children>
-                  <Label layoutX="14.0" layoutY="22.0" text="Collect Finase">
+                  <Label layoutX="14.0" layoutY="22.0" text="Member Activity ">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="19.0" />
                      </font>
@@ -249,6 +235,20 @@
             <Pane layoutX="787.0" layoutY="382.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
                <children>
                   <Label layoutX="14.0" layoutY="22.0" text="Reservation fulfilment">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="64.0" text="25" textFill="#130f40">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="44.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="787.0" layoutY="190.0" prefHeight="151.0" prefWidth="235.0" style="-fx-border-radius: 45px; -fx-background-radius: 45px; -fx-background-color: #95a5a6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="User Registration">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="19.0" />
                      </font>

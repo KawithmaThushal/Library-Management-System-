@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import DAO.DAOFacutry;
 import DAO.Custom.bookReturnDao;
+import Dto.billDto;
 import Dto.bookReturnDto;
+import Entity.bill;
 import Entity.bookReturnEntity;
 import Service.Custom.bookreturnCustom;
 
@@ -38,6 +40,22 @@ public class bookreturncustmimpl implements bookreturnCustom{
 
         return null;  
       
+    }
+
+    @Override
+    public String save(billDto dto) throws Exception {
+
+         bill entity = new bill(dto.getBID(),
+        dto.getMID(),
+        dto.getExpireDates(),
+        dto.getAmount()
+        
+        
+        
+       );
+
+        return breturn.save(entity);
+        
     }
     
 }

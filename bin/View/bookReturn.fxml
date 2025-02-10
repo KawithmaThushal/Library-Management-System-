@@ -71,7 +71,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="487.0" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="REPORT" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="487.0" onAction="#btnReportOnAction" prefHeight="50.0" prefWidth="235.0" style="-fx-background-color: #485460; -fx-background-radius: 20px;" text="REPORT" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
@@ -130,7 +130,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="849.0" layoutY="264.0" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Pay Bill">
+            <JFXButton buttonType="RAISED" layoutX="849.0" layoutY="264.0" onAction="#payonAction" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #ced6e0; -fx-background-radius: 20px; -fx-border-radius: 20px;" text="Pay Bill">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>

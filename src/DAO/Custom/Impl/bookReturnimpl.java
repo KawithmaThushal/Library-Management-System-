@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import DAO.CrudUtil;
 import DAO.Custom.bookReturnDao;
+import Entity.bill;
 import Entity.bookReturnEntity;
 
 public class bookReturnimpl implements bookReturnDao{
@@ -35,6 +36,13 @@ public class bookReturnimpl implements bookReturnDao{
 
 
       
+    }
+
+    @Override
+    public String save(bill dto) throws Exception {
+      boolean isssaved = CrudUtil.executeUpdate("INSERT INTO biltable (MID,BID,ExpireDates,Billing) VALUES (?, ?, ?, ?)", dto.getMID(),dto.getBID(),dto.getExpireDates(),dto.getAmount());
+
+      return isssaved ? "sucess" : "Fail";
     }
     
 }
